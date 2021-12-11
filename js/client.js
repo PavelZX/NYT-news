@@ -14,7 +14,7 @@ function composeArticle(articleData) {
   const template = document.getElementById('article_template')
   const article = template.content.cloneNode(true)
 
-  const {title, body, likes, rearticles} = articleData
+  const {title, body} = articleData
   article.querySelector('h2').innerText = title
   article.querySelector('p').innerText = body
 
@@ -37,21 +37,6 @@ async function fetchArticles() {
   isLoading = false
 }
 
-function throttle(callee, timeout) {
-  let timer = null
-
-  return function perform(...args) {
-    if (timer) return
-
-    timer = setTimeout(() => {
-      callee(...args)
-
-      clearTimeout(timer)
-      timer = null
-    }, timeout)
-  }
-}
-
 async function checkPosition() {
   const height = document.body.offsetHeight
   const screenHeight = window.innerHeight
@@ -66,6 +51,29 @@ async function checkPosition() {
 }
 
 (() => {
-  window.addEventListener('scroll', throttle(checkPosition))
-  window.addEventListener('resize', throttle(checkPosition))
+  window.addEventListener('scroll', checkPosition)
+  window.addEventListener('resize', checkPosition)
 })()
+
+// «База данных»
+
+const post = {
+  title: 'Заголовок статьи',
+  body: 'Текст поста о лучшей на свете стране дураков и непуганных идиотов. Все совпадения вымышлены и случайны.'
+}
+
+// «Сервер API»
+
+const server = {
+  posts(page = 2) {
+    const finished = page >= 5
+    const next = finished ? null : page + 1
+    const posts = Array(100).fill(post)
+
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({posts, next})
+      }, 0)
+    })
+  }
+}

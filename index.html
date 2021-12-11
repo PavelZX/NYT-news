@@ -1,71 +1,56 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <title>Новости из New York Times</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&display=swap">
-</head>
-<body>
-    <div class="container">
-        <header class="header">
-            <h1>Новости из New York Times</h1>
-        </header>
-        <main>
-            <article class="article">
-                <h2>Заголовок статьи</h2>
-                <p>Текст поста о лучшей на свете стране дураков и непуганных идиотов. Все совпадения вымышлены и случайны.</p>
-                <footer>
-                <button type="button" class="button button-like" aria-label="Лайков: 20">20</button>
-                <button type="button" class="button button-resweet" aria-label="Ресвитов: 20">20</button>
-                </footer>
-            </article>
+    <head>
+        <title>Новости из New York Times</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&display=swap">
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <h1>Новости из New York Times</h1>
+            </header>
+            <main>
+                <article class="article">
+                    <h2>Заголовок статьи</h2>
+                    <p>Текст поста о лучшей на свете стране дураков и непуганных идиотов. Все совпадения вымышлены и случайны.</p>
+                    <footer></footer>
+                </article>
 
-            <article class="article">
-                <h2>Статья о буквах</h2>
-                <p>Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеёк Даль журчит по всей стране и обеспечивает её всеми необходимыми правилами.</p>
-                <footer>
-                <button type="button" class="button button-like" aria-label="Лайков: 42">42</button>
-                <button type="button" class="button button-resweet" aria-label="Ресвитов: 69">69</button>
-                </footer>
-            </article>
+                <article class="article">
+                    <h2>Статья о буквах</h2>
+                    <p>Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеёк Даль журчит по всей стране и обеспечивает её всеми необходимыми правилами.</p>
+                    <footer></footer>
+                </article>
 
-            <article class="article">
-                <h2>Проснувшись однажды утром после беспокойного сна...</h2>
-                <p>...Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лёжа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый...</p>
-                <footer>
-                <button type="button" class="button button-like">146</button>
-                <button type="button" class="button button-resweet">34</button>
-                </footer>
-            </article>
+                <article class="article">
+                    <h2>Проснувшись однажды утром после беспокойного сна...</h2>
+                    <p>...Грегор Замза обнаружил, что он у себя в постели превратился в страшное насекомое. Лёжа на панцирнотвердой спине, он видел, стоило ему приподнять голову, свой коричневый, выпуклый...</p>
+                    <footer></footer>
+                </article>
 
-            <article class="article">
-                <h2>Страдания юного Вертера</h2>
-                <p>Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я.</p>
-                <footer>
-                <button type="button" class="button button-like" aria-label="Лайков: 4">4</button>
-                <button type="button" class="button button-resweet" aria-label="Ресвитов: 20">20</button>
-                </footer>
-            </article>
-        </main>
-        <footer class="footer">
-        © ВотВам, 2021
-        </footer>
-    </div>
-    <template id="article_template">
-        <article class="article">
-            <h2></h2>
-            <p></p>
-            <footer>
-                <button type="button" class="button button-like" aria-label="Лайков: "></button>
-                <button type="button" class="button button-resweet" aria-label="Ресвитов: "></button>
+                <article class="article">
+                    <h2>Страдания юного Вертера</h2>
+                    <p>Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я.</p>
+                    <footer></footer>
+                </article>
+            </main>
+            <footer class="footer">
+            © ВотВам, 2021
             </footer>
-        </article>
-    </template>
-    <script src="./js/client.js"></script>
-</body>
+        </div>
+        <template id="article_template">
+            <article class="article">
+                <h2></h2>
+                <p></p>
+                <footer></footer>
+            </article>
+        </template>
+        <script src="./js/client.js"></script>
+    </body>
 
 </html>

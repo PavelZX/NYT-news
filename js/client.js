@@ -1,3 +1,26 @@
+// «База данных»
+
+const post = {
+  title: 'Заголовок статьи',
+  body: 'Текст поста о лучшей на свете стране дураков и непуганных идиотов. Все совпадения вымышлены и случайны.'
+}
+
+// «Сервер API»
+
+const server = {
+  posts(page = 2) {
+    const finished = page >= 5
+    const next = finished ? null : page + 1
+    const posts = Array(100).fill(post)
+
+    return new Promise((resolve) => {
+        resolve({posts, next})
+    })
+  }
+}
+
+// Клиент
+
 let nextPage = 2
 let isLoading = false
 let shouldLoad = true
@@ -54,26 +77,3 @@ async function checkPosition() {
   window.addEventListener('scroll', checkPosition)
   window.addEventListener('resize', checkPosition)
 })()
-
-// «База данных»
-
-const post = {
-  title: 'Заголовок статьи',
-  body: 'Текст поста о лучшей на свете стране дураков и непуганных идиотов. Все совпадения вымышлены и случайны.'
-}
-
-// «Сервер API»
-
-const server = {
-  posts(page = 2) {
-    const finished = page >= 5
-    const next = finished ? null : page + 1
-    const posts = Array(100).fill(post)
-
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve({posts, next})
-      }, 0)
-    })
-  }
-}

@@ -1,6 +1,6 @@
 // «База данных»
 
-const post = {
+const article = {
   title: 'Заголовок статьи',
   body: 'Текст поста о лучшей на свете стране дураков и непуганных идиотов. Все совпадения вымышлены и случайны.'
 }
@@ -8,13 +8,13 @@ const post = {
 // «Сервер API»
 
 const server = {
-  posts(page = 2) {
+  articles(page = 2) {
     const finished = page >= 5
     const next = finished ? null : page + 1
-    const posts = Array(100).fill(post)
+    const articles = Array(100).fill(article)
 
     return new Promise((resolve) => {
-        resolve({posts, next})
+        resolve({articles, next})
     })
   }
 }
